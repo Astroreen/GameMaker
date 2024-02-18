@@ -1,0 +1,4 @@
+name: GameMaker
+version: '${version}'
+main: me.astroreen.gamemaker.GameMaker
+api-version: '1.20'
