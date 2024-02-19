@@ -1,5 +1,12 @@
 plugins {
     id 'java'
+
+    id("xyz.jpenilla.run-paper") version "2.1.0" //testing plugin on paper server
+}
+
+//server
+tasks {
+    runServer { minecraftVersion("1.20.2") }
 }
 
 group = 'me.astroreen'
@@ -8,8 +15,8 @@ version = '1.0.0'
 repositories {
     mavenCentral()
     maven {
-        name = "papermc-repo"
-        url = "https://repo.papermc.io/repository/maven-public/"
+        name = "spigotmc-repo"
+        url = "https://hub.spigotmc.org/nexus/content/repositories/snapshots/"
     }
     maven {
         name = "sonatype"
@@ -18,7 +25,9 @@ repositories {
 }
 
 dependencies {
-compileOnly "io.papermc.paper:paper-api:1.20.4-R0.1-SNAPSHOT"
+    compileOnly "org.spigotmc:spigot-api:1.20-R0.1-SNAPSHOT" //Spigot
+
+    implementation files('../AstroLibs/build/libs/AstroLibs.jar-1.0.000-all.jar') //My library
 }
 
 def targetJavaVersion = 17

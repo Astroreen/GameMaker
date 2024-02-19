@@ -2,3 +2,6 @@ name: GameMaker
 version: '${version}'
 main: me.astroreen.gamemaker.GameMaker
 api-version: '1.20'
+description: Allows players to make their own minigames!
+depend:
+  - AstroLibs
